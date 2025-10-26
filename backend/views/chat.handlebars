@@ -1,0 +1,35 @@
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-primary text-center py-3">
+                    <h5 class="mb-0">Ask about our project<i class="fas fa-sun"></i></h5>
+                </div>
+
+                <div class="card-body chat-window" id="chat-messages"
+                    style="height: 400px; overflow-y: auto; background: rgba(255, 255, 255, 0.9);">
+                    <div class="d-flex justify-content-start mb-3">
+                        <div class="p-3 bg-light rounded-3 shadow-sm">
+                            Hey there! We're college students who built Helios AI for a hackathon. I'm your
+                            voice-controlled assistant, powered by Google Gemini. Ask me about our solar-tracking robot
+                            or try a voice command to rotate the panel!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer bg-light p-3">
+                    <form id="chat-form" class="d-flex">
+                        <input type="text" id="user-input" class="form-control me-2"
+                            placeholder="Try 'Rotate panel left' or ask about our project..." required>
+                        <button type="submit" class="btn btn-primary">
+                            Send <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <p class="text-muted mt-2 mb-0 text-center"><small>Built by students, powered by Google
+                            Gemini</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/chat.js"></script>
