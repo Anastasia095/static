@@ -11,10 +11,26 @@ services:
 
   frontend:
     build:
-      context: .
-      dockerfile: front-end/Dockerfile
+      context: ./front-end 
+      dockerfile: Dockerfile
     container_name: helios-frontend
     ports:
       - "8080:80"
     depends_on:
       - backend
+# In compose.yml
+
+  nginx:
+    image: nginx:stable-alpine
+    container_name: helios-nginx
+    ports:
+      - "80:80"         # Publicly expose the standard HTTP port
+      - "443:443"     # (Optional) Add this for HTTPS/SSL
+    volumes:
+      # Map your local nginx config folder to the Nginx config directory in the container
+      - ./nginx/helios.conf:/etc/nginx/conf.d/default.conf
+
+    depends_on:
+      - frontend      # Ensure frontend is running before starting the proxy
+      - backend
+
